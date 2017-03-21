@@ -1,12 +1,12 @@
-This is the 5th assignment in the Udacity Virtual Reality Nanodegree program (at this time March 2017).
+This is the 5th assignment in the Udacity Virtual Reality Nano-degree program (at this time March 2017).
 
-GVR SDK v1.0.3
+GVR SDK v1.3.0
 
-The GVR SDK is is not included with the soruce code.  It can be downloaded from here:
+The GVR SDK is is not included with the source code.  It can be downloaded from here:
 
-https://github.com/googlevr/gvr-unity-sdk/releases/tag/v1.0.3
+https://github.com/googlevr/gvr-unity-sdk/releases/tag/v1.30.0
 
-To build the project, you need to import the custom package into Unity.  More informaiton is available here:
+To build the project, you need to import the custom package into Unity.  More information is available here:
 
 https://developers.google.com/vr/unity/get-started-ios
 
