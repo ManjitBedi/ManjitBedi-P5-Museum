@@ -1,5 +1,7 @@
 This is the 5th assignment in the Udacity Virtual Reality Nano-degree program (at this time March 2017).
 
+![Screenshot](https://github.com/ManjitBedi/P5-Museum/blob/master/image.png)
+
 GVR SDK v1.3.0
 
 The GVR SDK is is not included with the source code.  It can be downloaded from here:
