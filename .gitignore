@@ -46,6 +46,7 @@ Corridor/Library/metadata/
 
 build/
 Assets/GoogleVR/
+Assets/ResonanceAudio/
 Assets/Plugins/
 *~.skp
 ios_build/
