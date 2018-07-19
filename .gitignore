@@ -48,3 +48,4 @@ build/
 Assets/GoogleVR/
 Assets/Plugins/
 *~.skp
+ios_build/
