@@ -23,8 +23,11 @@ public class Waypoint : MonoBehaviour
 	private Color		_color					= Color.white;
 	private float 		_scale					= 1.0f;
 	private float 		_animated_lerp			= 1.0f;
-	private AudioSource _audio_source		= null;
+	private AudioSource _audio_source		    = null;
 	private Material	_material				= null;
+
+
+    private GameObject player; 
 
 	[Header("Material")]
 	public Material	material					= null;
@@ -60,6 +63,8 @@ public class Waypoint : MonoBehaviour
         _audio_source				= gameObject.GetComponent<AudioSource>();	
         _audio_source.clip		 	= clip_click;
         _audio_source.playOnAwake 	= false;
+
+        player = GameObject.Find("Player");
 	}
 
 
@@ -80,6 +85,7 @@ public class Waypoint : MonoBehaviour
 				break;
 
 			case State.Clicked:
+                Debug.Log("clicked");
 				Clicked();
 
 				bool scaled = _scale >= scale_clicked_max * .95f;
@@ -129,9 +135,10 @@ public class Waypoint : MonoBehaviour
         Debug.Log("move to waypoint");
 		_state = _state == State.Focused ? State.Clicked : _state;
 		
-		//_audio_source.Play();
+		_audio_source.Play();
 
-		Camera.main.transform.position 	= gameObject.transform.position;
+        // original code was camera; but the GVR SDK has changed; it is better to transform the player object position.
+        player.transform.position 	= gameObject.transform.position;
 	}
 
 
@@ -157,6 +164,7 @@ public class Waypoint : MonoBehaviour
 
 	public void Clicked()
 	{	
+        Debug.Log("clicked");
 		_scale					= Mathf.Lerp(_scale, scale_clicked_max, lerp_clicked);
 		_color					= Color.Lerp(_color,     color_hilight, lerp_clicked);
 	}
