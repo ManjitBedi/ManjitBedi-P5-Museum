@@ -15,8 +15,8 @@ public class station : MonoBehaviour {
 
 	public GameObject stationContent;
 
-	public ResonanceAudioSource promptAudio;
-    public ResonanceAudioSource contentAudio;
+	public AudioSource promptAudio;
+    public AudioSource contentAudio;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +38,7 @@ public class station : MonoBehaviour {
 		if (!prompted) {
 			prompted = true;
 			if (promptAudio != null) {
-                promptAudio.audioSource.Play();
+                promptAudio.Play();
 			}
 		}
 	}
@@ -50,8 +50,8 @@ public class station : MonoBehaviour {
 	public void OnClick () {
 
 		if (promptAudio != null) {
-            if (promptAudio.audioSource.isPlaying) {
-                promptAudio.audioSource.Stop();
+            if (promptAudio.isPlaying) {
+                promptAudio.Stop();
 			}
 		}
 
@@ -59,13 +59,13 @@ public class station : MonoBehaviour {
 			playing = true;
 			stationContent.SetActive (true);
 			if (contentAudio != null) {
-				contentAudio.audioSource.Play();
+				contentAudio.Play();
 			}
 		} else {
 			playing = false;
 				stationContent.SetActive (false);
 			if (contentAudio != null) {
-				contentAudio.audioSource.Stop();
+				contentAudio.Stop();
 			}
 		}
 	}
