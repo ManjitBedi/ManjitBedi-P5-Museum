@@ -23,7 +23,7 @@ public class Waypoint : MonoBehaviour
 	private Color		_color					= Color.white;
 	private float 		_scale					= 1.0f;
 	private float 		_animated_lerp			= 1.0f;
-	private ResonanceAudioSource _audio_source		= null;
+	private AudioSource _audio_source		= null;
 	private Material	_material				= null;
 
 	[Header("Material")]
@@ -57,9 +57,9 @@ public class Waypoint : MonoBehaviour
 		_material					= Instantiate(material);
 		_color_origional			= _material.color;
 		_color						= _color_origional;
-        _audio_source				= gameObject.GetComponent<ResonanceAudioSource>();	
-        _audio_source.audioSource.clip		 	= clip_click;
-		//_audio_source.playOnAwake 	= false;
+        _audio_source				= gameObject.GetComponent<AudioSource>();	
+        _audio_source.clip		 	= clip_click;
+        _audio_source.playOnAwake 	= false;
 	}
 
 
